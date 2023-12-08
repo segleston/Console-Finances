@@ -1,3 +1,5 @@
+// Dataset composed of arrays with two fields, Date and Profit/Losses
+
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -87,33 +89,54 @@ var finances = [
   ['Feb-2017', 671099],
 ];
 
-
+// Starter text to indicate what the report is for
 console.log("Financial Analysis")
 console.log("------------------")
 // The total number of months included in the dataset.
 
 let totalMonths = finances.length;
-console.log("Total months: " + totalMonths + ".")
+console.log("Total months: " + totalMonths + ".");
 
 
 // The net total amount of Profit/Losses over the entire period.
 
 let sum = 0
 
-for (let i = 0; i < finances.length; i++ ) {
+for (let i = 0; i < finances.length; i++) {
   sum += finances[i][1];
 }
 
-console.log("Total: $" + sum)
-
-
+console.log("Total: " + sum + ".");
 
 // The average of the changes in Profit/Losses over the entire period.
+// Need a variable to track the average, compare the data for the loop tht we're on to the data from the previous 
+// loop. var for current and prev once we start loop. if statement to make sure we're on at least month 2 
+// You will need to track what the total change in Profit/Losses are from month to month and 
+//then find the average.
 
-// You will need to track what the total change in Profit/Losses are from month to month and then find the average.
+
+let totalDifference = 0
+
+for (let j = 1; j < finances.length; j++) {
+  let currentProfit = finances[j][1];
+  let previousProfit = finances[j - 1][1];
+  let difference = currentProfit - previousProfit;
+  totalDifference += difference;
+}
+
+let numberOfMonths = finances.length - 1;
+let averageDifference = totalDifference / numberOfMonths;
+
+console.log("Average change: " + averageDifference);
+
+
+
+
 // (Total/(Number of months - 1))
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
 
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+
 
 
