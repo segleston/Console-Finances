@@ -126,16 +126,55 @@ for (let j = 1; j < finances.length; j++) {
 
 let numberOfMonths = finances.length - 1;
 let averageDifference = totalDifference / numberOfMonths;
+let average = Math.round(averageDifference * 100) / 100;
 
-console.log("Average change: " + averageDifference);
-
-
+console.log("Average change: " + average);
 
 
 // (Total/(Number of months - 1))
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
-
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
+
+let greatestIncrease =
+{ amount: 0,
+  date: ""
+}
+
+for (let l = 1; l < finances.length; l++) {
+  let currentProfit = finances[l][1];
+  let previousProfit = finances[l - 1][1];
+  let difference = currentProfit - previousProfit;
+
+
+    if (difference > greatestIncrease.amount) {
+      greatestIncrease.amount = difference;
+      greatestIncrease.date = finances[1][0];
+    }
+  }
+
+
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.month + " (" + greatestIncrease.amount + ").")
+
+
+let greatestDecrease = { 
+  amount: 0,
+  date: ""
+}
+
+
+for (let h = 1; h < finances.length; h++) {
+  let currentProfit = finances[h][1];
+  let previousProfit = finances[h - 1][1];
+  let difference = currentProfit - previousProfit;
+
+  if (difference < greatestDecrease.amount) {
+    greatestDecrease.amount = difference;
+    greatestDecrease.date = finances[1][0];
+  }
+}
+
+
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease.month + " (" + greatestDecrease.amount + ").")
 
 
 
