@@ -135,10 +135,13 @@ console.log("Average change: " + average);
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
-let greatestIncrease =
-{ amount: 0,
-  date: ""
-}
+let greatestIncrease = {   
+  date: finances[0][0], amount: 0
+};
+
+let greatestDecrease = {   
+  date: finances[0][0], amount: 0
+};
 
 for (let l = 1; l < finances.length; l++) {
   let currentProfit = finances[l][1];
@@ -148,33 +151,18 @@ for (let l = 1; l < finances.length; l++) {
 
     if (difference > greatestIncrease.amount) {
       greatestIncrease.amount = difference;
-      greatestIncrease.date = finances[1][0];
+      greatestIncrease.date = finances[l][0];
+    }
+    if (difference < greatestDecrease.amount) {
+      greatestDecrease.amount = difference;
+      greatestDecrease.date = finances[l][0];
     }
   }
 
 
-console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.month + " (" + greatestIncrease.amount + ").")
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.date + " (" + greatestIncrease.amount + ").")
 
-
-let greatestDecrease = { 
-  amount: 0,
-  date: ""
-}
-
-
-for (let h = 1; h < finances.length; h++) {
-  let currentProfit = finances[h][1];
-  let previousProfit = finances[h - 1][1];
-  let difference = currentProfit - previousProfit;
-
-  if (difference < greatestDecrease.amount) {
-    greatestDecrease.amount = difference;
-    greatestDecrease.date = finances[1][0];
-  }
-}
-
-
-console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease.month + " (" + greatestDecrease.amount + ").")
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease.date + " (" + greatestDecrease.amount + ").")
 
 
 
