@@ -131,7 +131,7 @@ let average = Math.round(averageDifference * 100) / 100;
 console.log("Average change: " + average);
 
 
-// (Total/(Number of months - 1))
+
 // The greatest increase in Profit/Losses (date and amount) over the entire period.
 // The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
