@@ -8,3 +8,7 @@ Live link: https://segleston.github.io/Console-Finances/
 Screenshot of page and console below to show code:
 
 ![alt text](./Images/Screenshot%202023-12-12%20at%2018.41.28.png)
+
+Credit:
+Tutor (Erik Hirsch)
+TA Chris 
