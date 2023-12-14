@@ -106,7 +106,7 @@ for (let i = 0; i < finances.length; i++) {
   sum += finances[i][1];
 }
 
-console.log("Total: " + sum + ".");
+console.log("Total: $" + sum + ".");
 
 // The average of the changes in Profit/Losses over the entire period.
 // Need a variable to track the average, compare the data for the loop tht we're on to the data from the previous 
@@ -160,9 +160,9 @@ for (let l = 1; l < finances.length; l++) {
   }
 
 
-console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.date + " (" + greatestIncrease.amount + ").")
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.date + " ($" + greatestIncrease.amount + ").")
 
-console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease.date + " (" + greatestDecrease.amount + ").")
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecrease.date + " ($" + greatestDecrease.amount + ").")
 
 
 
